@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - "node"
+  - "9"
+# services:
+#   - mongodb
+install:
+  - npm install
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: /bin/bash ./deploy/deploy.sh
+  on:
+    branch: master
+script:
+  - npm test
